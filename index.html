@@ -3,35 +3,457 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Cyber Security Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mr. Anchit Akshaansh | Assistant Professor & Researcher | Cybroheicktech</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --text: #334155;
+            --text-heading: #0f172a;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.75;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+
+        /* Sticky Navigation */
+        nav {
+            background-color: var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1050px;
+            margin: 0 auto;
+            padding: 0.85rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            letter-spacing: 0.3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.25rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        /* Hero / Headline Banner */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: #ffffff;
+            padding: 3.5rem 1.5rem;
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .header-container {
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 800;
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.5px;
+        }
+
+        .role-subtitle {
+            color: #60a5fa;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .headline-card {
+            background: rgba(255, 255, 255, 0.07);
+            border-left: 4px solid #60a5fa;
+            padding: 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .headline-card p {
+            color: #f1f5f9;
+            margin-bottom: 0.85rem;
+            font-size: 1rem;
+        }
+
+        .headline-card p:last-child {
+            margin-bottom: 0;
+            color: #cbd5e1;
+        }
+
+        .scholar-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+        }
+
+        .badge-link {
+            background-color: var(--accent);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .badge-link:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Main Container & Cards */
+        main {
+            max-width: 1050px;
+            margin: 2.5rem auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        h2 {
+            color: var(--text-heading);
+            font-size: 1.75rem;
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        h3 {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            margin-bottom: 0.85rem;
+        }
+
+        h4 {
+            color: var(--accent);
+            font-size: 1.05rem;
+            margin-top: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1.15rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.6rem;
+        }
+
+        blockquote {
+            background-color: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--primary);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+
+        .contact-box {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+        }
+
+        .contact-box strong {
+            display: block;
+            color: var(--primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-box a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--primary);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.85rem;
+            }
+            section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to the World of Cyber Security</h1>
+
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Er. Anchit Akshaansh</a>
+            <ul class="nav-links">
+                <li><a href="#headline">Headline</a></li>
+                <li><a href="#about">Biography & Research</a></li>
+                <li><a href="#services-about">Cybroheicktech About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="headline">
+        <div class="header-container">
+            <h1>MR. ANCHIT AKSHAANSH</h1>
+            <div class="role-subtitle">Assistant Professor (CSE) | Ph.D. Scholar | Founder at Cybroheicktech</div>
+            
+            <div class="headline-card">
+                <p><strong>Assistant Professor in Computer Science &amp; Engineering | Ph.D. Scholar (CSE) at NIAMT Ranchi | M.Tech &amp; B.Tech (CSE) | Cybersecurity, Artificial Intelligence, Machine Learning, Text Mining &amp; Image Processing Specialist | Published Researcher | Certified in PCAP Python (Cisco), Applied Accelerated AI (C-DAC/NSM &amp; IITs), Cryptography, VAPT &amp; Quantum Computing | Educator &amp; R&amp;D Consultant</strong></p>
+                <p>Dedicated academician and researcher with over 6 years of combined experience in university-level teaching and cybersecurity. Specialized in Python, C++, Java, Object-Oriented System Design, Linux, Computer Networks, and Data Mining. Proven leadership as Cyber Security Head, academic mentor, and technical project supervisor across AKTU-affiliated engineering institutions, bridging classroom fundamentals with real-world security and intelligent system solutions.</p>
+            </div>
+
+            <div class="scholar-badges">
+                <a href="https://www.linkedin.com/in/er-anchit-akshaansh" target="_blank" rel="noopener" class="badge-link">LinkedIn Profile</a>
+                <a href="https://scholar.google.com/citations?user=i7THu7QAAAAJ&hl=en" target="_blank" rel="noopener" class="badge-link">Google Scholar</a>
+                <a href="https://orcid.org/0009-0001-0532-6750" target="_blank" rel="noopener" class="badge-link">ORCID: 0009-0001-0532-6750</a>
+                <a href="https://doi.org/10.13052/rp-9788770229852" target="_blank" rel="noopener" class="badge-link">Published Research (River Publishers)</a>
+            </div>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>Introduction</h2>
-            <p>Cyber security is the practice of protecting systems, networks, and programs from digital attacks. These cyberattacks are usually aimed at accessing, changing, or destroying sensitive information; extorting money from users; or interrupting normal business processes.</p>
+        <!-- Section 2: Detailed About Section -->
+        <section id="about">
+            <h2>About Me &amp; Professional Journey</h2>
+
+            <h3>Professional Identity and Core Philosophy</h3>
+            <p>As an Assistant Professor in Computer Science and Engineering and a doctoral researcher, my career is built on a clear objective: connecting theoretical computer science with practical, secure, and intelligent real-world applications. With over six years of combined experience in higher education and cybersecurity, I focus my daily work on two primary goals. First, I investigate how artificial intelligence, machine learning, text mining, and image processing can solve modern security challenges. Second, I mentor engineering students to think critically, write clean and secure code, and build systems that hold up under real operational stress.</p>
+            <p>Technology changes quickly, and academic instruction has to keep pace. In my classrooms and laboratories, I treat computer science not as a collection of static definitions, but as a living craft. Whether I am guiding undergraduate students through the fundamentals of Object-Oriented Programming with Java, configuring Linux environments, exploring the architecture of Computer Networks, or leading hands-on Cybersecurity Workshops, my priority is always practical comprehension. I want my students and research collaborators to understand not just how an algorithm or protocol functions on paper, but why it was designed that way, where its vulnerabilities lie, and how it can be improved.</p>
+            <p>My work is anchored by a personal commitment to continuous learning. Currently pursuing my Doctor of Philosophy (Ph.D.) in Computer Science and Engineering at the National Institute of Advanced Manufacturing Technology (NIAMT) in Hatia, Ranchi, Jharkhand (2025 to 2029), I am constantly expanding my research into the intersections of intelligent computing and digital defense. Backed by an energetic, motivated, and confident approach to problem-solving, I thrive in collaborative academic and research environments where curiosity, rigorous testing, and technical precision are valued.</p>
+
+            <h3>Academic Foundation and Early Engineering Journey</h3>
+            <p>My path in computer science began with my undergraduate studies at Biju Patnaik University of Technology (BPUT) in Rourkela, Odisha, where I earned my Bachelor of Technology (B.Tech) in Computer Science and Engineering (2011 to 2017) with a 6.13 CGPA. During these formative years, I developed a strong interest in how data moves across distributed networks and how software interfaces with underlying hardware.</p>
+            <p>To see how large-scale communications operated outside the textbook, I completed specialized vocational training early in my academic career. From May 12, 2014, to June 8, 2014, I trained at the BSNL Old Telephone Exchange in Hazaribagh, Jharkhand, focusing on Telecommunication Networking. There, I gained direct exposure to Packet Switching, Telephone Switching, and Printed Circuit Board (PCB) Control. This experience demystified physical network infrastructure for me and inspired my undergraduate capstone project.</p>
+            <p>For my B.Tech project at BPUT, I developed "A Novel Framework on Showing The Flow of Packet Blocks Using Packet Switching." The goal of this web-application-based project was to make an abstract networking concept visible and intuitive. In standard networking courses, students often struggle to visualize how data is segmented, routed across varying paths, and reassembled. I built a system that demonstrated the transmission of data across the internet and local PCs by breaking information down into small packet blocks. The application tracked and displayed the live flow of these packet blocks on a PC screen as they took different network paths to reach their final destination.</p>
+            <p>Before completing my undergraduate degree, I also expanded my software development skills through vocational training at the BSNL Advanced Regional Telecom Training Centre (ARTTC) in Ranchi, Jharkhand, from January 23, 2017, to February 18, 2017. Concentrating on ASP.NET Vocational Training, I learned full-stack website development using CSS3, HTML5, and the .NET framework, giving me a solid grasp of web architecture that would later inform my work in web and server security.</p>
+
+            <h3>Advanced Postgraduate Studies and Machine Learning Research</h3>
+            <p>After building a foundation in networking, web technologies, and cryptography (including completing Cryptography Fundamentals through Cybrary on December 20, 2019), I decided to deepen my research capabilities by pursuing a postgraduate degree. From 2020 to 2022, I attended Mahatma Gandhi Central University in East Champaran, Motihari, Bihar, where I earned my Master of Technology (M.Tech) in Computer Science and Engineering with a 6.95 CGPA.</p>
+            <p>My M.Tech studies marked a major turning point in my career. It was here that I brought together my two primary technical interests: cybersecurity and artificial intelligence. Traditional signature-based antivirus tools often fall behind when confronted with obfuscated code or new variants of malicious scripts. I wanted to explore how data science and natural language processing techniques could be adapted to spot threats hidden inside text and code files.</p>
+            <p>My M.Tech thesis project, titled "Virus Detection on Text Files Using Text Mining: Cybersecurity Using Machine Learning," tackled this exact problem. In this project, I designed an analytical pipeline to inspect text files and determine whether they contained malicious virus payloads. The workflow began by importing raw text files and transforming the unstructured text data into a structured mathematical representation using Term Frequency-Inverse Document Frequency (TF-IDF) in matrix format. Using Python feature extraction techniques, I isolated the relevant patterns and fed the resulting matrices into five distinct machine learning classifiers to evaluate and compare their detection accuracy.</p>
+            <p>This postgraduate research produced strong empirical results and led directly to my peer-reviewed publication. On March 29, 2023, my paper, titled "Code Text-Based Virus and Non-virus Classification and Comparative Analysis of Machine Learning Algorithms" (Paper ID 9530), was published in the proceedings of the 1st International Conference on Recent Trends and Future Trends in Smart Electronics System and Manufacturing (SESMIC 2022). Published by River Publishers (Book ID 1044, Article No. 13, DOI: <a href="https://doi.org/10.13052/rp-9788770229852" target="_blank" rel="noopener">10.13052/rp-9788770229852</a>), this study provided a comparative benchmark of how different machine learning algorithms perform when classifying viral versus benign code text. Maintaining active scholarly profiles on Google Scholar and ORCID (0009-0001-0532-6750), I continue to build upon this research as I advance through my doctoral program at NIAMT Ranchi.</p>
+
+            <h3>Teaching Career and Academic Leadership</h3>
+            <p>Teaching is at the heart of my professional identity. Over the course of my faculty appointments at reputable engineering institutions affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU) in Uttar Pradesh, I have dedicated myself to building strong technical departments, modernizing laboratory instruction, and mentoring hundreds of B.Tech students.</p>
+            <p>My formal faculty journey in Uttar Pradesh included serving as an Assistant Professor in the Department of Computer Science and Engineering at Meerut Institute of Technology (MIT), Meerut, from October 10, 2022, to August 26, 2023 (10 months, 2 weeks, and 2 days). Following my tenure at MIT, I joined Dr. K. N. Modi Institute of Engineering and Technology in Modinagar, UP, as an Assistant Professor in the CSE Department, serving from August 30, 2023, to April 29, 2024 (7 months, 4 weeks, and 2 days). Most recently, I served as an Assistant Professor in the Department of Computer Science and Engineering at Bharat Institute of Technology (BIT), Meerut, UP, from August 12, 2024, to August 18, 2025.</p>
+            <p>Across all three institutions, my core academic responsibilities have been comprehensive, covering classroom instruction, research mentorship, and institutional administration:</p>
+            <ul>
+                <li><strong>Lectures, Tutorials, and Technical Research:</strong> Preparing and delivering rigorous lectures and interactive tutorials for B.Tech CSE cohorts while conducting ongoing technical research.</li>
+                <li><strong>Curriculum and Material Development:</strong> Designing structured course materials, lab manuals, and study guides tailored to AKTU syllabus standards and current industry practices.</li>
+                <li><strong>Laboratory Development:</strong> Setting up, upgrading, and managing computer science and cybersecurity laboratories so students can move smoothly from theory to practical implementation.</li>
+                <li><strong>Student Assessment and Evaluation:</strong> Conducting fair, thorough assessments of student performance through examinations, practical lab evaluations, and project reviews.</li>
+                <li><strong>Consultancy and R&amp;D Services:</strong> Assisting departmental and institutional teams in technical consultancy projects and research and development initiatives.</li>
+                <li><strong>Institutional and Hostel Administration:</strong> Supporting department heads, institute administrators, and hostel management in maintaining a safe, disciplined, and productive campus environment.</li>
+                <li><strong>Co-Curricular and Extracurricular Coordination:</strong> Organizing technical fests, coding competitions, and student welfare activities that encourage holistic development.</li>
+            </ul>
+            <p>During my time at Bharat Institute of Technology, Meerut, my role expanded to include several key leadership appointments. As the <strong>Cyber Security Head</strong> and coordinator of the <strong>Cyber Security Club</strong>, I led initiatives to raise security awareness across the student body, organizing practical training sessions on ethical hacking, network defense, and digital hygiene. Additionally, I coordinated <strong>Industrial Visits</strong> to give students direct exposure to corporate IT operations and managed departmental <strong>Magazines and Newsletters</strong>, documenting technical achievements, research breakthroughs, and campus events.</p>
+
+            <h3>Breadth of Subjects Taught and Technical Versatility</h3>
+            <p>A defining feature of my teaching career is the breadth of computer science subjects I have taught. Because software systems do not exist in isolation, I make a point of showing students how different layers of the computing stack interact. My teaching portfolio includes:</p>
+            <ul>
+                <li><strong>Cybersecurity and Cybersecurity Workshop:</strong> Teaching threat modeling, cryptography, network defense, vulnerability assessment, and ethical hacking practices.</li>
+                <li><strong>Artificial Intelligence and Machine Learning:</strong> Covering search algorithms, knowledge representation, supervised and unsupervised learning, feature engineering, and neural networks.</li>
+                <li><strong>Concept of Data Mining:</strong> Exploring pattern discovery, classification, clustering, and text mining in large datasets.</li>
+                <li><strong>Programming and Software Engineering (OOPS with Java, Object-Oriented System Design):</strong> Building strong habits in modular programming, design patterns, UML modeling, and scalable system architecture using Java, C++, and Python.</li>
+                <li><strong>Systems and Networking (Computer Networks, Linux):</strong> Instructing students on OSI and TCP/IP models, routing protocols, packet switching, and Linux system administration and shell scripting.</li>
+                <li><strong>Application Development and Interfaces (Android Application Development, Windows Development, Human-Computer Interaction):</strong> Guiding students in building responsive, user-centered mobile and desktop applications with intuitive interfaces.</li>
+            </ul>
+
+            <h3>Continuous Professional Development, FDPs, and Specialized Certifications</h3>
+            <p>In fields like cybersecurity, artificial intelligence, and quantum computing, standing still means falling behind. I invest heavily in Faculty Development Programs (FDPs), government-backed workshops, and industry certifications to ensure my knowledge remains current and my students receive up-to-date instruction.</p>
+
+            <h4>Artificial Intelligence and High-Performance Computing</h4>
+            <p>Between February 2022 and May 2022, I completed the <strong>NSM AI Shiksha</strong> program on <strong>Applied Accelerated Artificial Intelligence</strong>, an initiative conducted by C-DAC and National Supercomputing Mission (NSM) Nodal Centers in HPC and AI across IIT Goa, IIT Kharagpur, IIT Madras, and IIT Palakkad. This intensive program deepened my understanding of accelerating AI workloads on high-performance computing architectures.</p>
+
+            <h4>Advanced Python Programming and Scientific Computing</h4>
+            <p>Because Python is the primary language for modern data science and security automation, I have completed multiple rigorous training programs to master its ecosystem:</p>
+            <ul>
+                <li>From July 11, 2023, to July 15, 2023, I completed a <strong>5-Day Workshop on Python Programming</strong> at Sikkim Manipal Institute of Technology (Sikkim Manipal University). This program covered Python basics, strings, functions, collections, file handling, exceptions, OOPS, Python for Data Science (Parts I and II), and solving Partial Differential Equations using the open-source computing platform FEniCS with a Python interface (Parts I and II).</li>
+                <li>From April 29, 2024, to May 4, 2024, I completed a <strong>5-Day Online FDP on Programming Essentials in Python</strong> conducted by the ICT Academy (an initiative of the Government of India, State Government, and Industry) at the IIT Madras Research Park in Chennai.</li>
+                <li>Extending this mastery, from April 29, 2024, to July 26, 2024, I completed a <strong>2-Month Online FDP and Self-Learning Program on PCAP: Programming Essentials in Python</strong> through the <strong>Cisco Networking Academy</strong>.</li>
+            </ul>
+
+            <h4>Quantum Computing and Quantum Machine Learning</h4>
+            <p>Recognizing that quantum computing will reshape both cryptography and artificial intelligence, I have actively trained in this emerging domain:</p>
+            <ul>
+                <li>From July 11, 2023, to July 15, 2023, I participated in a <strong>DRDO Sponsored One-Week Online Workshop on Quantum Computing</strong> hosted by the Indian Institute of Information Technology (IIIT), Kota.</li>
+                <li>From January 6, 2025, to January 11, 2025, I completed an AICTE/ATAL Academy and Skill India <strong>Faculty Development Program on Quantum Machine Learning: Bridging the Gap Between Quantum Computing and Artificial Intelligence</strong> (Certificate No. ATAL/2025/173617076) at Raj Kumar Goel Institute of Technology.</li>
+                <li>On March 1, 2025, I attended an <strong>Industry Workshop on Quantum Computing in the Noisy Era: Challenges and Solutions</strong> (Serial No. CSIKC/WS/MARCH-25/25-25/02) organized by the Computer Society of India (CSI), Kolkata Chapter.</li>
+            </ul>
+
+            <h4>Cybersecurity, Ethical Hacking, and Digital Hygiene</h4>
+            <p>To keep my security skills sharp and practical, I regularly engage with technical societies and government awareness initiatives:</p>
+            <ul>
+                <li>From April 20, 2024, to April 23, 2024, I completed a hands-on <strong>4-Day Online Workshop on Cyber Security</strong> (Serial No. CSIKC/WS-APRIL-24/02) with the <strong>Computer Society of India (CSI), Kolkata Chapter</strong>. The curriculum covered:
+                    <ul>
+                        <li><em>Day 1:</em> Introduction to Ethical Hacking and Cyber Security, Google Dorks, and Shodan.</li>
+                        <li><em>Day 2:</em> Web Security, Server Security, Authentication Bypass, and Data Integrity Failure.</li>
+                        <li><em>Day 3:</em> API Security.</li>
+                        <li><em>Day 4:</em> Vulnerability Assessment and Penetration Testing (VAPT), Professional Report Making, and Capture The Flag (CTF) Gaming.</li>
+                    </ul>
+                </li>
+                <li>On February 1, 2025, I participated in an <strong>Industry Workshop on the Importance of Cybersecurity and Cyber Psychology in Today's World</strong> (Serial No. CSIKC/WS/FEB-25/24-25/03) through the CSI Kolkata Chapter, examining the human and behavioral factors behind security breaches.</li>
+                <li>In December 2024 and January 2025, I actively participated in the <strong>Information Security Education and Awareness (ISEA) Project</strong> under the <strong>Ministry of Electronics and Information Technology (MeitY), Government of India</strong> (in collaboration with AKTU, InnovationHub UP, and C-DAC), earning multiple certifications and pledges:
+                    <ul>
+                        <li><em>Cyber Hygiene Pledge</em> (Certificate No. ISEA/PDG/CHPP/001010, December 19, 2024).</li>
+                        <li><em>Cyber Hygiene Practices</em> (Certificate No. ISEA/AWA/PAW/716787, December 19 to 24, 2024).</li>
+                        <li><em>Cyber Hygiene Practices for Women</em> (Certificate No. ISEA/AWA/WM/721204, January 7, 2025).</li>
+                        <li><em>Cyber Safety for Kids</em> (Certificate No. ISEA/CSK/560782, January 7, 2025).</li>
+                        <li><em>Securing Your Digital Life</em> (Certificate No. ISEA/CHBQEH/213191, January 7, 2025).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h4>Academic Policy and Entrepreneurship</h4>
+            <p>Because modern educators must also understand educational policy and startup culture, I completed a <strong>2-Day Workshop on the National Education Policy (NEP 2020)</strong> from July 21 to July 22, 2023, followed by a <strong>2-Week Online Faculty Development Program on Entrepreneurship (FEDP)</strong> from August 19 to August 31, 2023, both hosted by Inderprastha Engineering College, Ghaziabad.</p>
+
+            <h3>Personal Qualities, Skills, and Future Outlook</h3>
+            <p>Beyond technical proficiency in Python, C++, and Java, I bring strong capabilities in management, digital marketing, and bilingual communication (fluent in reading, writing, and typing in both English and Hindi). Colleagues and students know me as an energetic, motivated, confident, and imaginative professional who takes ownership of complex tasks. Whether I am setting up a new security lab, mentoring a student research group, or leading consultancy initiatives through <strong>Cybroheicktech</strong>, I approach every challenge with transparency, discipline, and a focus on practical results.</p>
+            <p>I am always open to connecting with fellow academics, researchers, industry professionals, and organizations looking for expertise in cybersecurity, artificial intelligence, machine learning, and technical education. Let us collaborate to build safer networks, smarter algorithms, and stronger educational frameworks.</p>
         </section>
-        <section>
-            <h2>Why is Cyber Security Important?</h2>
-            <p>In today's connected world, everyone benefits from advanced cyber defense programs. At an individual level, a cyber security attack can result in everything from identity theft to extortion attempts, to the loss of important data like family photos. Everyone relies on critical infrastructure such as power plants, hospitals, and financial service companies. Securing these and other organizations is essential to keeping our society functioning.</p>
+
+        <!-- Section 3: Services About Section -->
+        <section id="services-about">
+            <h2>Services About Section (Cybroheicktech)</h2>
+            <p>Grounded in over six years of academic research, cybersecurity leadership, and hands-on software engineering, <strong>Cybroheicktech</strong> delivers dependable technology, security, and research solutions tailored to your goals. We bridge rigorous computer science methodologies with practical industry execution across cybersecurity, artificial intelligence, machine learning, web development, and technical consultancy. Our Company Cybroheicktech Works Transparently and On Time for Project Delivery. Our Staff are Energetic and Confident About Their Work. Give Us a Chance To Serve You Please Contact Us For Queries.</p>
         </section>
-        <section id="dynamic-section">
-            <h2>Share Your Thoughts</h2>
-            <form id="input-form">
-                <label for="user-input">Your Thoughts:</label>
-                <input type="text" id="user-input" name="user-input" required>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="display-area"></div>
+
+        <!-- Section 4: Services Web Page Content -->
+        <section id="services">
+            <h2>Cybroheicktech Services</h2>
+            <h3>Welcome to Cybroheicktech: Reliable Technology, Security &amp; Research Solutions</h3>
+            <p>At <strong>Cybroheicktech</strong>, we combine deep academic rigor with practical engineering execution to help businesses, educational institutions, and researchers solve complex technical challenges. Led by expertise in Computer Science and Engineering, Cybersecurity, and Artificial Intelligence, our team builds secure systems, intelligent software workflows, and clear technical strategies that perform reliably in the real world.</p>
+
+            <blockquote>
+                "Our Company Cybroheicktech Works Transparently and On Time for Project Delivery. Our Staff are Energetic and Confident About Their Work. Give Us a Chance To Serve You Please Contact Us For Queries."
+            </blockquote>
+
+            <h3>Why Partner With Cybroheicktech? (Our Core Strengths)</h3>
+            <ol>
+                <li><strong>Uncompromising Transparency:</strong> We believe you should never have to guess where your project stands. From initial scoping and architecture design to final deployment, we maintain open communication channels, clear documentation, and honest progress reporting at every milestone.</li>
+                <li><strong>Strict Punctuality and On-Time Delivery:</strong> Deadlines matter. We structure our workflows around realistic timelines and disciplined project management. When we commit to a delivery date, our team organizes every phase of development and testing to ensure your project arrives on schedule without cutting corners.</li>
+                <li><strong>Energetic and Confident Technical Staff:</strong> Our team brings enthusiasm, confidence, and sharp technical curiosity to every assignment. Backed by hands-on training in modern programming languages (Python, Java, C++, .NET) and advanced security tools, our staff tackles complex engineering problems with a proactive, solution-oriented mindset.</li>
+                <li><strong>Research-Backed Reliability:</strong> Unlike generic service providers, our methodology is rooted in peer-reviewed research and university-level engineering standards. Every security audit, machine learning model, and software application we deliver is tested thoroughly for stability, accuracy, and long-term resilience.</li>
+                <li><strong>Dedicated Customer Focus and Responsive Support:</strong> Your operational goals drive our technical decisions. We take the time to listen to your requirements, answer your questions in plain language, and tailor our services to fit your specific environment and budget.</li>
+            </ol>
+
+            <h3>Our Core Service Offerings</h3>
+            <ul>
+                <li><strong>Cybersecurity Audits &amp; VAPT Services:</strong> Comprehensive Vulnerability Assessment and Penetration Testing (VAPT), web and server security evaluations, API security testing, authentication review, and actionable security reporting to protect your digital assets.</li>
+                <li><strong>AI, Machine Learning &amp; Text Mining Solutions:</strong> Custom data pipelines, predictive modeling, TF-IDF feature extraction, automated text classification, and intelligent threat detection systems built using Python.</li>
+                <li><strong>Web, Desktop &amp; Mobile Application Development:</strong> Full-stack web development (HTML5, CSS3, ASP.NET), Android application development, Windows software development, and intuitive user interface design.</li>
+                <li><strong>Academic R&amp;D Consultancy &amp; Technical Training:</strong> Specialized workshops, laboratory setup advisory, curriculum design, and hands-on training in Cybersecurity, Ethical Hacking, Python Programming, Linux, and Computer Networks for institutions and corporate teams.</li>
+                <li><strong>Digital Marketing &amp; Technical Management:</strong> Strategic digital outreach and structured technical project management to help your organization grow its online presence securely and efficiently.</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <p>Ready to start your next project or have questions about how we can support your organization? Reach out to us directly:</p>
+            <div class="contact-grid">
+                <div class="contact-box">
+                    <strong>Email</strong>
+                    <a href="mailto:anchit.1650@gmail.com">anchit.1650@gmail.com</a>
+                </div>
+                <div class="contact-box">
+                    <strong>Phone</strong>
+                    <a href="tel:+917631136099">+91-7631136099</a>
+                </div>
+                <div class="contact-box">
+                    <strong>LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/er-anchit-akshaansh" target="_blank" rel="noopener">linkedin.com/in/er-anchit-akshaansh</a>
+                </div>
+                <div class="contact-box">
+                    <strong>Location</strong>
+                    <span>A-401, A-Block, Panchwati Elite Apartment, Near New Birla Hanuman Mandir, Joda Talab Road, Chesire Home Road, Bariatu, Ranchi, Jharkhand - 834009</span>
+                </div>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Cyber Security</p>
+        <p>&copy; 2026 Mr. Anchit Akshaansh &amp; Cybroheicktech. All Rights Reserved.</p>
     </footer>
-    <script src="script.js"></script>
+
 </body>
 </html>
