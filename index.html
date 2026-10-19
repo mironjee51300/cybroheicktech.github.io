@@ -1,520 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cybroheicktech | Technology, Security & Research Solutions</title>
-    <style>
-        :root {
-            --primary: #0f172a;
-            --secondary: #1e293b;
-            --accent: #2563eb;
-            --accent-light: #eff6ff;
-            --text: #334155;
-            --text-heading: #0f172a;
-            --bg: #f8fafc;
-            --card-bg: #ffffff;
-            --border: #e2e8f0;
-            --success: #10b981;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.75;
-            color: var(--text);
-            background-color: var(--bg);
-        }
-
-        /* Navigation Bar */
-        nav {
-            background-color: var(--primary);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-        }
-
-        .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-brand {
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1.3rem;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .nav-links button {
-            background: none;
-            border: none;
-            color: #cbd5e1;
-            font-size: 0.95rem;
-            font-weight: 500;
-            cursor: pointer;
-            transition: color 0.2s ease;
-            font-family: inherit;
-        }
-
-        .nav-links button:hover, .nav-links button.active {
-            color: #ffffff;
-        }
-
-        .nav-links button.active {
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 2px;
-        }
-
-        /* Main Container & Sections */
-        main {
-            max-width: 1100px;
-            margin: 2.5rem auto;
-            padding: 0 1.5rem;
-        }
-
-        .page-section {
-            display: none;
-        }
-
-        .page-section.active-tab {
-            display: block;
-        }
-
-        /* Hero / Header Banner */
-        .hero-banner {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-            color: #ffffff;
-            padding: 4rem 2rem;
-            border-radius: 12px;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-banner h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-banner p {
-            font-size: 1.15rem;
-            color: #cbd5e1;
-            max-width: 800px;
-            margin-bottom: 1.5rem;
-        }
-
-        .quote-box {
-            background-color: rgba(37, 99, 235, 0.15);
-            border-left: 4px solid var(--accent);
-            padding: 1.25rem 1.5rem;
-            border-radius: 0 8px 8px 0;
-            font-style: italic;
-            font-weight: 600;
-            color: #f8fafc;
-            margin-top: 1.5rem;
-        }
-
-        /* Cards & Content Layout */
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-        }
-
-        h2 {
-            color: var(--text-heading);
-            font-size: 1.8rem;
-            padding-bottom: 0.75rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border);
-        }
-
-        h3 {
-            color: var(--secondary);
-            font-size: 1.3rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        p {
-            margin-bottom: 1.15rem;
-        }
-
-        /* Strengths Grid */
-        .strengths-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .strength-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .strength-card h4 {
-            color: var(--accent);
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* Service Categories & Items */
-        .service-category {
-            margin-bottom: 2rem;
-        }
-
-        .service-category h3 {
-            color: var(--accent);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.25rem;
-        }
-
-        .service-item {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            padding: 1.25rem;
-            border-radius: 8px;
-        }
-
-        .service-item h4 {
-            color: var(--primary);
-            margin-bottom: 0.4rem;
-            font-size: 1.05rem;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact-info-box {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            border-radius: 8px;
-        }
-
-        .contact-info-box strong {
-            display: block;
-            color: var(--primary);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.4rem;
-        }
-
-        .contact-info-box a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* Forms & Inputs */
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--secondary);
-            font-size: 0.95rem;
-        }
-
-        input[type="text"],
-        input[type="email"],
-        textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 1rem;
-            background-color: #fff;
-            color: var(--text);
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-        }
-
-        button.btn-primary {
-            background-color: var(--accent);
-            color: #ffffff;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-
-        button.btn-primary:hover {
-            background-color: #1d4ed8;
-        }
-
-        .alert-success {
-            background-color: #d1fae5;
-            color: #065f46;
-            padding: 0.75rem 1rem;
-            border-radius: 6px;
-            margin-bottom: 1rem;
-            font-weight: 500;
-            display: none;
-        }
-
-        footer {
-            text-align: center;
-            padding: 2.5rem 1.5rem;
-            background: var(--primary);
-            color: #94a3b8;
-            font-size: 0.9rem;
-            margin-top: 4rem;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="nav-brand" onclick="switchTab('home')">Cybroheicktech</a>
-            <ul class="nav-links">
-                <li><button class="nav-btn active" onclick="switchTab('home')">Home</button></li>
-                <li><button class="nav-btn" onclick="switchTab('services')">Services</button></li>
-                <li><button class="nav-btn" onclick="switchTab('contact')">Contact</button></li>
-            </ul>
+<!-- CONTACT SECTION -->
+<section id="contact" class="page-section">
+    <div class="card">
+        <h2>Get in Touch &amp; Inquiry Support</h2>
+        <p>Submit your project requirements below. Every inquiry is assigned a unique tracking reference ID and routed directly to our technical team.</p>
+        
+        <div class="contact-grid">
+            <div class="contact-info-box">
+                <strong>Email Address</strong>
+                <a href="mailto:anchit.1650@gmail.com">anchit.1650@gmail.com</a>
+            </div>
+            <div class="contact-info-box">
+                <strong>Phone Number</strong>
+                <a href="tel:+917631136099">+91-7631136099</a>
+            </div>
+            <div class="contact-info-box">
+                <strong>Professional Network</strong>
+                <a href="https://www.linkedin.com/in/er-anchit-akshaansh" target="_blank" rel="noopener">linkedin.com/in/er-anchit-akshaansh</a>
+            </div>
         </div>
-    </nav>
 
-    <main>
-        <!-- HOME SECTION -->
-        <section id="home" class="page-section active-tab">
-            <div class="hero-banner">
-                <h1>Advanced Technology, Security & Research Solutions</h1>
-                <p>At Cybroheicktech, we combine rigorous academic research with practical industry execution to deliver dependable technological solutions for businesses, institutions, and researchers.</p>
-                <div class="quote-box">
-                    "Our Company Cybroheicktech Works Transparently and On Time for Project Delivery. Our Staff are Energetic and Confident About Their Work. Give Us a Chance To Serve You Please Contact Us For Queries."
-                </div>
-            </div>
+        <div style="margin-top: 2rem;">
+            <h3>Send a Tracked Inquiry</h3>
 
-            <div class="card">
-                <h2>Our Core Strengths</h2>
-                <p>We adhere to the highest professional standards, ensuring every project is handled with precision, integrity, and proactive client collaboration.</p>
-                
-                <div class="strengths-grid">
-                    <div class="strength-card">
-                        <h4>1. Uncompromising Transparency</h4>
-                        <p>Complete clarity from scoping and architecture design to final deployment with honest, consistent progress reporting.</p>
-                    </div>
-                    <div class="strength-card">
-                        <h4>2. Strict Punctuality</h4>
-                        <p>Disciplined project management ensuring timely delivery without ever cutting corners on quality or testing.</p>
-                    </div>
-                    <div class="strength-card">
-                        <h4>3. Energetic & Confident Staff</h4>
-                        <p>A passionate technical team tackling complex engineering and security challenges with proactive solutions.</p>
-                    </div>
-                    <div class="strength-card">
-                        <h4>4. Research-Backed Reliability</h4>
-                        <p>Methodologies firmly rooted in peer-reviewed academic research and robust university-level engineering standards.</p>
-                    </div>
-                    <div class="strength-card">
-                        <h4>5. Dedicated Customer Focus</h4>
-                        <p>Tailoring our technical strategies directly around your unique operational goals, budget, and system requirements.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <!-- Dynamic Confirmation & Error Banners -->
+            <div id="contactSuccess" class="alert-success" role="status" aria-live="polite"></div>
+            <div id="contactError" style="background-color: #fee2e2; color: #991b1b; padding: 0.85rem 1rem; border-radius: 6px; margin-bottom: 1rem; font-weight: 500; display: none;" role="alert"></div>
 
-        <!-- SERVICES SECTION -->
-        <section id="services" class="page-section">
-            <div class="card">
-                <h2>Our Comprehensive Service Offerings</h2>
-                <p>Explore our structured portfolio of professional technical services tailored to secure, optimize, and market your digital infrastructure.</p>
+            <form id="contactForm" onsubmit="handleContactSubmit(event)" novalidate>
+                <!-- Honeypot Field (Hidden from real users, traps spam bots) -->
+                <input type="checkbox" name="botcheck" id="botcheck" style="display: none;" tabindex="-1" autocomplete="off">
 
-                <!-- Category 1: Security & Protection -->
-                <div class="service-category">
-                    <h3>1. Security & Protection Services</h3>
-                    <div class="service-grid">
-                        <div class="service-item">
-                            <h4>Cybersecurity</h4>
-                            <p>Robust protection measures, risk assessments, and threat mitigation strategies for enterprise environments.</p>
-                        </div>
-                        <div class="service-item">
-                            <h4>Information Security</h4>
-                            <p>Policies, controls, and compliance frameworks designed to protect sensitive digital assets and data integrity.</p>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="contactName">Your Name *</label>
+                    <input type="text" id="contactName" name="name" required minlength="2" maxlength="100" placeholder="Enter your full name">
                 </div>
 
-                <!-- Category 2: Infrastructure & Consulting -->
-                <div class="service-category">
-                    <h3>2. IT Infrastructure & Systems</h3>
-                    <div class="service-grid">
-                        <div class="service-item">
-                            <h4>IT Consulting</h4>
-                            <p>Strategic technology guidance to optimize workflows, system architecture, and operational efficiency.</p>
-                        </div>
-                        <div class="service-item">
-                            <h4>Computer Networking</h4>
-                            <p>Design, implementation, and maintenance of reliable, high-performance local and wide-area network architectures.</p>
-                        </div>
-                        <div class="service-item">
-                            <h4>Backup & Recovery Systems</h4>
-                            <p>Automated backup routines and robust redundancy frameworks to ensure zero data loss during critical failures.</p>
-                        </div>
-                        <div class="service-item">
-                            <h4>Data Recovery</h4>
-                            <p>Specialized extraction and restoration protocols for corrupted, damaged, or inaccessible storage volumes.</p>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email Address *</label>
+                    <input type="email" id="contactEmail" name="email" required placeholder="name@organization.com">
                 </div>
 
-                <!-- Category 3: Digital Growth & Branding -->
-                <div class="service-category">
-                    <h3>3. Digital Marketing & Branding</h3>
-                    <div class="service-grid">
-                        <div class="service-item">
-                            <h4>Digital Marketing</h4>
-                            <p>Comprehensive outreach campaigns designed to maximize online visibility and customer engagement.</p>
-                        </div>
-                        <div class="service-item">
-                            <h4>Search Engine Optimization (SEO)</h4>
-                            <p>Organic search optimization techniques to drive long-term traffic and high search engine ranking positions.</p>
-                        </div>
-                        <div class="service-item">
-                            <h4>Search Engine Marketing (SEM)</h4>
-                            <p>Targeted paid advertising strategies to capture immediate leads and maximize return on ad spend.</p>
-                        </div>
-                        <div class="service-item">
-                            <h4>Logo Design</h4>
-                            <p>Professional brand identity creation delivering memorable, visually striking graphical assets.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT SECTION -->
-        <section id="contact" class="page-section">
-            <div class="card">
-                <h2>Get in Touch & Inquiry Support</h2>
-                <p>Our contact pipeline features verified delivery diagnostics to ensure zero lost inquiries. Reach out directly or submit your query below.</p>
-                
-                <div class="contact-grid">
-                    <div class="contact-info-box">
-                        <strong>Email Address</strong>
-                        <a href="mailto:anchit.1650@gmail.com">anchit.1650@gmail.com</a>
-                    </div>
-                    <div class="contact-info-box">
-                        <strong>Phone Number</strong>
-                        <a href="tel:+917631136099">+91-7631136099</a>
-                    </div>
-                    <div class="contact-info-box">
-                        <strong>Professional Network</strong>
-                        <a href="https://www.linkedin.com/in/er-anchit-akshaansh" target="_blank" rel="noopener">linkedin.com/in/er-anchit-akshaansh</a>
-                    </div>
+                <div class="form-group">
+                    <label for="contactPhone">Phone Number (Optional)</label>
+                    <input type="text" id="contactPhone" name="phone" placeholder="+91-XXXXXXXXXX">
                 </div>
 
-                <div style="margin-top: 2rem;">
-                    <h3>Send an Inquiry (Verified Tracking Enabled)</h3>
-                    <div id="contactAlert" class="alert-success">Inquiry successfully logged and dispatched! Delivery confirmed to server database and forwarding queue.</div>
-                    <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                        <div class="form-group">
-                            <label for="contactName">Your Name</label>
-                            <input type="text" id="contactName" required placeholder="Enter your full name">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactEmail">Email Address</label>
-                            <input type="email" id="contactEmail" required placeholder="Enter your email address">
-                        </div>
-                        <div class="form-group">
-                            <label for="contactMessage">Message / Query</label>
-                            <textarea id="contactMessage" rows="4" required placeholder="Describe your project or query..."></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary">Submit Secure Inquiry</button>
-                    </form>
+                <div class="form-group">
+                    <label for="contactCategory">Service Category *</label>
+                    <select id="contactCategory" name="category" required style="width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-family: inherit; font-size: 1rem; background-color: #fff; color: var(--text);">
+                        <option value="Cybersecurity & Information Security">Cybersecurity &amp; Information Security</option>
+                        <option value="IT Consulting & Computer Networking">IT Consulting &amp; Computer Networking</option>
+                        <option value="Data Recovery & Backup Systems">Data Recovery &amp; Backup Systems</option>
+                        <option value="Digital Marketing, SEO & SEM">Digital Marketing, SEO &amp; SEM</option>
+                        <option value="Logo Design & Branding">Logo Design &amp; Branding</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                    </select>
                 </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 Cybroheicktech &amp; Mr. Anchit Akshaansh. All Rights Reserved.</p>
-    </footer>
+                <div class="form-group">
+                    <label for="contactMessage">Message / Project Details *</label>
+                    <textarea id="contactMessage" name="message" rows="4" required minlength="10" maxlength="3000" placeholder="Describe your requirements, timeline, or technical query..."></textarea>
+                </div>
 
-    <!-- JavaScript Application Logic -->
-    <script>
-        // Tab Navigation Controller
-        function switchTab(tabId) {
-            document.querySelectorAll('.page-section').forEach(sec => sec.classList.remove('active-tab'));
-            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
-
-            document.getElementById(tabId).classList.add('active-tab');
-            event.target.classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Resolved Contact Form Submission Handler (Fixes tracking and delivery confirmation issues)
-        function handleContactSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('contactName').value;
-            const email = document.getElementById('contactEmail').value;
-            const message = document.getElementById('contactMessage').value;
-
-            // Simulating database storage & mail forwarding check
-            const inquiryPayload = { name, email, message, timestamp: new Date().toISOString() };
-            console.log("Inquiry successfully processed and forwarded:", inquiryPayload);
-
-            const alertBox = document.getElementById('contactAlert');
-            alertBox.style.display = 'block';
-            document.getElementById('contactForm').reset();
-            setTimeout(() => { alertBox.style.display = 'none'; }, 5000);
-        }
-    </script>
-</body>
-</html>
+                <button type="submit" id="submitBtn" class="btn-primary">Submit Secure Inquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
