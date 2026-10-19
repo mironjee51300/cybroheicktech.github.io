@@ -88,22 +88,6 @@
             padding-bottom: 2px;
         }
 
-        /* Admin Mode Toggle Button */
-        .admin-toggle-btn {
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 0.35rem 0.75rem;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .admin-toggle-btn.active-admin {
-            background-color: var(--accent);
-            border-color: var(--accent);
-        }
-
         /* Main Container & Sections */
         main {
             max-width: 1100px;
@@ -309,24 +293,6 @@
             background-color: #1d4ed8;
         }
 
-        /* Editable Content Styling in Admin Mode */
-        .editable-content[contenteditable="true"] {
-            border: 1px dashed var(--accent);
-            padding: 0.25rem;
-            background-color: rgba(37, 99, 235, 0.03);
-            border-radius: 4px;
-        }
-
-        /* Login / Profile State Containers */
-        .auth-container {
-            max-width: 450px;
-            margin: 0 auto;
-        }
-
-        .profile-dashboard {
-            display: none;
-        }
-
         .alert-success {
             background-color: #d1fae5;
             color: #065f46;
@@ -357,8 +323,6 @@
                 <li><button class="nav-btn active" onclick="switchTab('home')">Home</button></li>
                 <li><button class="nav-btn" onclick="switchTab('services')">Services</button></li>
                 <li><button class="nav-btn" onclick="switchTab('contact')">Contact</button></li>
-                <li><button class="nav-btn" onclick="switchTab('profile')" id="profile-nav-label">User Profile</button></li>
-                <li><button id="adminToggle" class="admin-toggle-btn" onclick="toggleAdminMode()" title="Enable editing mode">Admin: OFF</button></li>
             </ul>
         </div>
     </nav>
@@ -367,37 +331,37 @@
         <!-- HOME SECTION -->
         <section id="home" class="page-section active-tab">
             <div class="hero-banner">
-                <h1 class="editable-content" data-id="home-title">Advanced Technology, Security & Research Solutions</h1>
-                <p class="editable-content" data-id="home-subtitle">At Cybroheicktech, we combine rigorous academic research with practical industry execution to deliver dependable technological solutions for businesses, institutions, and researchers.</p>
-                <div class="quote-box editable-content" data-id="home-quote">
+                <h1>Advanced Technology, Security & Research Solutions</h1>
+                <p>At Cybroheicktech, we combine rigorous academic research with practical industry execution to deliver dependable technological solutions for businesses, institutions, and researchers.</p>
+                <div class="quote-box">
                     "Our Company Cybroheicktech Works Transparently and On Time for Project Delivery. Our Staff are Energetic and Confident About Their Work. Give Us a Chance To Serve You Please Contact Us For Queries."
                 </div>
             </div>
 
             <div class="card">
                 <h2>Our Core Strengths</h2>
-                <p class="editable-content" data-id="home-strengths-intro">We adhere to the highest professional standards, ensuring every project is handled with precision, integrity, and proactive client collaboration.</p>
+                <p>We adhere to the highest professional standards, ensuring every project is handled with precision, integrity, and proactive client collaboration.</p>
                 
                 <div class="strengths-grid">
                     <div class="strength-card">
-                        <h4 class="editable-content" data-id="strength-1-title">1. Uncompromising Transparency</h4>
-                        <p class="editable-content" data-id="strength-1-desc">Complete clarity from scoping and architecture design to final deployment with honest, consistent progress reporting.</p>
+                        <h4>1. Uncompromising Transparency</h4>
+                        <p>Complete clarity from scoping and architecture design to final deployment with honest, consistent progress reporting.</p>
                     </div>
                     <div class="strength-card">
-                        <h4 class="editable-content" data-id="strength-2-title">2. Strict Punctuality</h4>
-                        <p class="editable-content" data-id="strength-2-desc">Disciplined project management ensuring timely delivery without ever cutting corners on quality or testing.</p>
+                        <h4>2. Strict Punctuality</h4>
+                        <p>Disciplined project management ensuring timely delivery without ever cutting corners on quality or testing.</p>
                     </div>
                     <div class="strength-card">
-                        <h4 class="editable-content" data-id="strength-3-title">3. Energetic & Confident Staff</h4>
-                        <p class="editable-content" data-id="strength-3-desc">A passionate technical team tackling complex engineering and security challenges with proactive solutions.</p>
+                        <h4>3. Energetic & Confident Staff</h4>
+                        <p>A passionate technical team tackling complex engineering and security challenges with proactive solutions.</p>
                     </div>
                     <div class="strength-card">
-                        <h4 class="editable-content" data-id="strength-4-title">4. Research-Backed Reliability</h4>
-                        <p class="editable-content" data-id="strength-4-desc">Methodologies firmly rooted in peer-reviewed academic research and robust university-level engineering standards.</p>
+                        <h4>4. Research-Backed Reliability</h4>
+                        <p>Methodologies firmly rooted in peer-reviewed academic research and robust university-level engineering standards.</p>
                     </div>
                     <div class="strength-card">
-                        <h4 class="editable-content" data-id="strength-5-title">5. Dedicated Customer Focus</h4>
-                        <p class="editable-content" data-id="strength-5-desc">Tailoring our technical strategies directly around your unique operational goals, budget, and system requirements.</p>
+                        <h4>5. Dedicated Customer Focus</h4>
+                        <p>Tailoring our technical strategies directly around your unique operational goals, budget, and system requirements.</p>
                     </div>
                 </div>
             </div>
@@ -407,31 +371,31 @@
         <section id="services" class="page-section">
             <div class="card">
                 <h2>Our Core Service Offerings</h2>
-                <p class="editable-content" data-id="services-intro">Explore our comprehensive suite of professional technical services designed to secure, automate, and elevate your digital infrastructure.</p>
+                <p>Explore our comprehensive suite of professional technical services designed to secure, automate, and elevate your digital infrastructure.</p>
 
                 <div class="service-item">
-                    <h3 class="editable-content" data-id="srv-1-title">🔒 Cybersecurity Audits & VAPT Services</h3>
-                    <p class="editable-content" data-id="srv-1-desc">Comprehensive Vulnerability Assessment and Penetration Testing (VAPT), web and server security evaluations, API security testing, authentication reviews, and actionable risk reporting to protect critical digital assets.</p>
+                    <h3>🔒 Cybersecurity Audits & VAPT Services</h3>
+                    <p>Comprehensive Vulnerability Assessment and Penetration Testing (VAPT), web and server security evaluations, API security testing, authentication reviews, and actionable risk reporting to protect critical digital assets.</p>
                 </div>
 
                 <div class="service-item">
-                    <h3 class="editable-content" data-id="srv-2-title">🧠 AI, Machine Learning & Text Mining Solutions</h3>
-                    <p class="editable-content" data-id="srv-2-desc">Custom data pipelines, predictive modeling, TF-IDF feature extraction, automated text classification, and intelligent threat detection systems engineered using advanced Python frameworks.</p>
+                    <h3>🧠 AI, Machine Learning & Text Mining Solutions</h3>
+                    <p>Custom data pipelines, predictive modeling, TF-IDF feature extraction, automated text classification, and intelligent threat detection systems engineered using advanced Python frameworks.</p>
                 </div>
 
                 <div class="service-item">
-                    <h3 class="editable-content" data-id="srv-3-title">💻 Web, Desktop & Mobile Application Development</h3>
-                    <p class="editable-content" data-id="srv-3-desc">Full-stack web development (HTML5, CSS3, ASP.NET), Android application development, Windows desktop software development, and intuitive user interface design built for high performance.</p>
+                    <h3>💻 Web, Desktop & Mobile Application Development</h3>
+                    <p>Full-stack web development (HTML5, CSS3, ASP.NET), Android application development, Windows desktop software development, and intuitive user interface design built for high performance.</p>
                 </div>
 
                 <div class="service-item">
-                    <h3 class="editable-content" data-id="srv-4-title">🎓 Academic R&D Consultancy & Technical Training</h3>
-                    <p class="editable-content" data-id="srv-4-desc">Specialized workshops, laboratory setup advisory, curriculum design, and hands-on training in Cybersecurity, Ethical Hacking, Python Programming, Linux, and Computer Networks for academic and corporate teams.</p>
+                    <h3>🎓 Academic R&D Consultancy & Technical Training</h3>
+                    <p>Specialized workshops, laboratory setup advisory, curriculum design, and hands-on training in Cybersecurity, Ethical Hacking, Python Programming, Linux, and Computer Networks for academic and corporate teams.</p>
                 </div>
 
                 <div class="service-item">
-                    <h3 class="editable-content" data-id="srv-5-title">📈 Digital Marketing & Technical Management</h3>
-                    <p class="editable-content" data-id="srv-5-desc">Strategic digital outreach, search visibility, and structured technical project management to help your organization grow its online footprint securely and efficiently.</p>
+                    <h3>📈 Digital Marketing & Technical Management</h3>
+                    <p>Strategic digital outreach, search visibility, and structured technical project management to help your organization grow its online footprint securely and efficiently.</p>
                 </div>
             </div>
         </section>
@@ -467,66 +431,13 @@
                         </div>
                         <div class="form-group">
                             <label for="contactEmail">Email Address</label>
-                            <input type="email5" id="contactEmail" required placeholder="Enter your email address">
+                            <input type="email" id="contactEmail" required placeholder="Enter your email address">
                         </div>
                         <div class="form-group">
                             <label for="contactMessage">Message / Query</label>
                             <textarea id="contactMessage" rows="4" required placeholder="Describe your project or query..."></textarea>
                         </div>
                         <button type="submit" class="btn-primary">Submit Inquiry</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- USER PROFILE SECTION -->
-        <section id="profile" class="page-section">
-            <div class="card">
-                <h2>User Profile & Authentication</h2>
-                
-                <!-- Login View -->
-                <div id="loginView" class="auth-container">
-                    <p style="margin-bottom: 1.5rem; text-align: center;">Please log in to view and edit your profile credentials.</p>
-                    <div id="loginError" style="color: #dc2626; margin-bottom: 1rem; font-size: 0.9rem; display: none;">Invalid email or password. Try demo@cybroheicktech.com / password123</div>
-                    <form onsubmit="handleLogin(event)">
-                        <div class="form-group">
-                            <label for="loginEmail">Email Address</label>
-                            <input type="email" id="loginEmail" value="demo@cybroheicktech.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="loginPassword">Password</label>
-                            <input type="password" id="loginPassword" value="password123" required>
-                        </div>
-                        <button type="submit" class="btn-primary" style="width: 100%;">Log In</button>
-                    </form>
-                </div>
-
-                <!-- Logged-In Profile Dashboard (Editable Inline) -->
-                <div id="profileDashboard" class="profile-dashboard">
-                    <div id="profileAlert" class="alert-success">Profile details updated successfully!</div>
-                    <p style="margin-bottom: 1.5rem;">Welcome back! You can modify your account details below and click save.</p>
-                    
-                    <form onsubmit="handleProfileUpdate(event)">
-                        <div class="form-group">
-                            <label for="profName">Full Name</label>
-                            <input type="text" id="profName" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="profEmail">Email Address</label>
-                            <input type="email" id="profEmail" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="profRole">Professional Designation / Role</label>
-                            <input type="text" id="profRole" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="profBio">Professional Bio / Summary</label>
-                            <textarea id="profBio" rows="3" required></textarea>
-                        </div>
-                        <div style="display: flex; gap: 1rem;">
-                            <button type="submit" class="btn-primary">Save Changes</button>
-                            <button type="button" class="btn-primary" style="background-color: #64748b;" onclick="handleLogout()">Log Out</button>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -545,78 +456,8 @@
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
 
             document.getElementById(tabId).classList.add('active-tab');
-            
-            // Highlight respective button
             event.target.classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Admin Mode / Inline Content Editing Toggle
-        let adminMode = false;
-        function toggleAdminMode() {
-            adminMode = !adminMode;
-            const btn = document.getElementById('adminToggle');
-            const editables = document.querySelectorAll('.editable-content');
-
-            if (adminMode) {
-                btn.textContent = 'Admin: ON';
-                btn.classList.add('active-admin');
-                editables.forEach(el => el.setAttribute('contenteditable', 'true'));
-            } else {
-                btn.textContent = 'Admin: OFF';
-                btn.classList.remove('active-admin');
-                editables.forEach(el => el.setAttribute('contenteditable', 'false'));
-            }
-        }
-
-        // Mock User Profile Data Store (Local State)
-        let userProfile = {
-            name: "Mr. Anchit Akshaansh",
-            email: "anchit.1650@gmail.com",
-            role: "Assistant Professor & Technical Consultant",
-            bio: "Specializing in Cybersecurity, Artificial Intelligence, Machine Learning, and Academic R&D Solutions."
-        };
-
-        // Authentication Handlers
-        function handleLogin(event) {
-            event.preventDefault();
-            const email = document.getElementById('loginEmail').value;
-            const pass = document.getElementById('loginPassword').value;
-
-            // Simple demo validation
-            if (email && pass.length >= 6) {
-                document.getElementById('loginView').style.display = 'none';
-                document.getElementById('profileDashboard').style.display = 'block';
-                document.getElementById('profile-nav-label').textContent = userProfile.name.split(' ')[0] + "'s Profile";
-                
-                // Populate fields
-                document.getElementById('profName').value = userProfile.name;
-                document.getElementById('profEmail').value = userProfile.email;
-                document.getElementById('profRole').value = userProfile.role;
-                document.getElementById('profBio').value = userProfile.bio;
-            } else {
-                document.getElementById('loginError').style.display = 'block';
-            }
-        }
-
-        function handleProfileUpdate(event) {
-            event.preventDefault();
-            userProfile.name = document.getElementById('profName').value;
-            userProfile.email = document.getElementById('profEmail').value;
-            userProfile.role = document.getElementById('profRole').value;
-            userProfile.bio = document.getElementById('profBio').value;
-
-            document.getElementById('profile-nav-label').textContent = userProfile.name.split(' ')[0] + "'s Profile";
-            
-            const alertBox = document.getElementById('profileAlert');
-            alertBox.style.display = 'block';
-            setTimeout(() => { alertBox.style.display = 'none'; }, 3000);
-        }
-
-        function handleLogout() {
-            document.getElementById('profileDashboard').style.display = 'none';
-            document.getElementById('loginView').style.display = 'block';
-            document.getElementById('profile-nav-label').textContent = 'User Profile';
         }
 
         // Contact Form Submission Handler
